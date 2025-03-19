@@ -1,16 +1,11 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
-
 dotenv.config();
 
 const Connection = async () => {
     try {
-       
-        await mongoose.connect(process.env.URL, {
-            useNewUrlParser: true, 
-            useUnifiedTopology: true 
-        });
+        await mongoose.connect(process.env.URL);
         console.log("Bağlantı başarılı");
     } catch (err) {
         console.error("Bağlantı hatası:", err);
